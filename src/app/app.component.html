@@ -1,0 +1,47 @@
+<div id="background">
+<br>
+<h1>{{pageheader}}</h1>
+<br>
+<br>
+<form id="form" #myform="ngForm" novalidate (ngSubmit)="kelvin(); myform.reset()" align="center">
+  <br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter value:
+  <input type="number" name="v" [(ngModel)]="v" maxlength="5" id="v" >
+  <p>{{u}}<p>
+  <br><div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choose unit:
+  
+<select [(ngModel)]="temSelected" (ngModelChange)='onTemSelected($event)' name="x" >
+<option *ngFor="let tem of temp" [value]="tem.Id">
+    {{tem.Name}} 
+
+</option>
+</select>
+
+
+ </div>
+<form>
+  <br>
+  <p id="answer">{{Status}}{{last}}</p>
+<br>
+<table align="center" id="btn">
+  <tr>
+<td><button id="k" (click)="kelvin(); myform.reset()">Kelvin</button></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> <button id="k" (click)="cel(); myform.reset()">Celcius</button></td>
+<td> </td>
+<td> </td>
+<td> </td> 
+<td><button id="k" (click)="fan(); myform.reset()">Faranhite</button></td>
+</tr>
+</table>
+<br>
+
+
+
+
+<div>
+
+ 
